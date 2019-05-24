@@ -32,6 +32,21 @@ Require composer autoload file
 require './vendor/autoload.php';
 ```
 
+#### Mongo ObjectId
+
+You need to install and enable ext-mongodb through your distro's repos or PECL
+
+```
+sudo pecl install mongodb
+```
+
+```php
+use Gears\Identity\Extra\ObjectIdIdentity;
+use MongoDB\BSON\ObjectId;
+
+$identity = ObjectIdIdentity::fromString((string) new ObjectId());
+```
+
 #### ULID (Universally Unique Lexicographically Sortable Identifier)
 
 you need to require https://github.com/robinvdvleuten/php-ulid
