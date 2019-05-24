@@ -27,6 +27,7 @@
   },
   "require-dev": {
     "brainmaestro/composer-git-hooks": "^2.1",
+    "ext-mongodb": "*",
     "fpay/xid-php": "^1.0",
     "friendsofphp/php-cs-fixer": "^2.0",
     "infection/infection": "^0.9",
@@ -44,7 +45,10 @@
     "tuupola/ksuid": "^2.0"
   },
   "suggest": {
-    "tuupola/ksuid": "For K-Sortable Globally Unique identities"
+    "ext-mongodb": "For ObjectId identities",
+    "robinvdvleuten/ulid": "For Universally Unique Lexicographically Sortable ID identities",
+    "tuupola/ksuid": "For K-Sortable Globally Unique identities",
+    "fpay/xid-php": "For Globally Unique ID identities"
   },
   "autoload": {
     "psr-4": {
