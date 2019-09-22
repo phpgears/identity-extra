@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Gears\Identity\Extra\Tests;
 
+use Gears\Identity\Exception\InvalidIdentityException;
 use Gears\Identity\Extra\XidIdentity;
 use PHPUnit\Framework\TestCase;
 
@@ -30,12 +31,11 @@ class XidIdentityTest extends TestCase
         $this->assertSame($xid, (string) $stub);
     }
 
-    /**
-     * @expectedException \Gears\Identity\Exception\InvalidIdentityException
-     * @expectedExceptionMessage Provided identity value "invalidXid" is not a valid Xid
-     */
     public function testInvalidXid(): void
     {
+        $this->expectException(InvalidIdentityException::class);
+        $this->expectExceptionMessage('Provided identity value "invalidXid" is not a valid Xid');
+
         XidIdentity::fromString('invalidXid');
     }
 }

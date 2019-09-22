@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Gears\Identity\Extra\Tests;
 
+use Gears\Identity\Exception\InvalidIdentityException;
 use Gears\Identity\Extra\UlidIdentity;
 use PHPUnit\Framework\TestCase;
 
@@ -30,12 +31,11 @@ class UlidIdentityTest extends TestCase
         $this->assertSame($ulid, (string) $stub);
     }
 
-    /**
-     * @expectedException \Gears\Identity\Exception\InvalidIdentityException
-     * @expectedExceptionMessage Provided identity value "invalidULID" is not a valid ULID
-     */
     public function testInvalidUlid(): void
     {
+        $this->expectException(InvalidIdentityException::class);
+        $this->expectExceptionMessage('Provided identity value "invalidULID" is not a valid ULID');
+
         UlidIdentity::fromString('invalidULID');
     }
 }

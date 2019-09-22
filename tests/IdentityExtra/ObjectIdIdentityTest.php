@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Gears\Identity\Extra\Tests;
 
+use Gears\Identity\Exception\InvalidIdentityException;
 use Gears\Identity\Extra\ObjectIdIdentity;
 use PHPUnit\Framework\TestCase;
 
@@ -30,12 +31,11 @@ class ObjectIdIdentityTest extends TestCase
         $this->assertSame($mongoId, (string) $stub);
     }
 
-    /**
-     * @expectedException \Gears\Identity\Exception\InvalidIdentityException
-     * @expectedExceptionMessage Provided identity value "invalidMongoObjectId" is not a valid Mongo ObjectId
-     */
     public function testInvalidMongoId(): void
     {
+        $this->expectException(InvalidIdentityException::class);
+        $this->expectExceptionMessage('Provided identity value "invalidMongoObjectId" is not a valid Mongo ObjectId');
+
         ObjectIdIdentity::fromString('invalidMongoObjectId');
     }
 }

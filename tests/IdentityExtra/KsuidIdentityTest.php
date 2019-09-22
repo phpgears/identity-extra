@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Gears\Identity\Extra\Tests;
 
+use Gears\Identity\Exception\InvalidIdentityException;
 use Gears\Identity\Extra\KsuidIdentity;
 use PHPUnit\Framework\TestCase;
 
@@ -30,12 +31,11 @@ class KsuidIdentityTest extends TestCase
         $this->assertSame($ksuid, (string) $stub);
     }
 
-    /**
-     * @expectedException \Gears\Identity\Exception\InvalidIdentityException
-     * @expectedExceptionMessage Provided identity value "invalidKSUID" is not a valid KSUID
-     */
     public function testInvalidKsuid(): void
     {
+        $this->expectException(InvalidIdentityException::class);
+        $this->expectExceptionMessage('Provided identity value "invalidKSUID" is not a valid KSUID');
+
         KsuidIdentity::fromString('invalidKSUID');
     }
 }
