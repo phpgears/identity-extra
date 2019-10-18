@@ -14,7 +14,7 @@
 
 Non UUID based identity objects for PHP
 
-This package extends [phpgears/identity](https://github.com/phpgears/identity) to provide non UUID identities, head over there to know more
+This package extends [phpgears/identity](https://github.com/phpgears/identity) to provide non UUID-based identities
 
 ## Installation
 
@@ -42,9 +42,13 @@ sudo pecl install mongodb
 
 ```php
 use Gears\Identity\Extra\ObjectIdIdentity;
+use Gears\Identity\Extra\ObjectIdIdentityGenerator;
 use MongoDB\BSON\ObjectId;
 
 $identity = ObjectIdIdentity::fromString((string) new ObjectId());
+
+// From generator
+$identity = (new ObjectIdIdentityGenerator())->generate();
 ```
 
 #### ULID (Universally Unique Lexicographically Sortable Identifier)
@@ -57,9 +61,13 @@ composer require obinvdvleuten/ulid
 
 ```php
 use Gears\Identity\Extra\UlidIdentity;
+use Gears\Identity\Extra\UlidIdentityGenerator;
 use Ulid\Ulid;
 
 $identity = UlidIdentity::fromString((string) Ulid::generate());
+
+// From generator
+$identity = (new UlidIdentityGenerator())->generate();
 ```
 
 Find more information about ULID at https://github.com/ulid/spec
@@ -74,9 +82,13 @@ composer require tuupola/ksuid
 
 ```php
 use Gears\Identity\Extra\KsuidIdentity;
+use Gears\Identity\Extra\KsuidIdentityGenerator;
 use Tuupola\KsuidFactory;
 
 $identity = KsuidIdentity::fromString((string) KsuidFactory::create());
+
+// From generator
+$identity = (new KsuidIdentityGenerator())->generate();
 ```
 
 Find more information about KSUID at https://github.com/segmentio/ksuid
@@ -91,9 +103,13 @@ composer require fpay/xid-php
 
 ```php
 use Gears\Identity\Extra\XidIdentity;
+use Gears\Identity\Extra\XidIdentityGenerator;
 use Fpay\Xid\Generator;
 
 $identity = XidIdentity::fromString((string) Generator::create());
+
+// From generator
+$identity = (new XidIdentityGenerator())->generate();
 ```
 
 Find more information about Xid at https://github.com/fpay/xid-php
