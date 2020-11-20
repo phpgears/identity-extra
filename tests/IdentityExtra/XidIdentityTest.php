@@ -34,7 +34,7 @@ class XidIdentityTest extends TestCase
     public function testInvalidXid(): void
     {
         $this->expectException(InvalidIdentityException::class);
-        $this->expectExceptionMessage('Provided identity value "invalidXid" is not a valid Xid');
+        $this->expectExceptionMessage('Provided identity value "invalidXid" is not a valid Xid.');
 
         XidIdentity::fromString('invalidXid');
     }

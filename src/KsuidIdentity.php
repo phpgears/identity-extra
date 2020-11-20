@@ -32,7 +32,7 @@ class KsuidIdentity extends AbstractIdentity
     {
         if (\strlen($value) !== Ksuid::ENCODED_SIZE) {
             throw new InvalidIdentityException(
-                \sprintf('Provided identity value "%s" is not a valid KSUID', $value)
+                \sprintf('Provided identity value "%s" is not a valid KSUID.', $value)
             );
         }
 
@@ -40,7 +40,7 @@ class KsuidIdentity extends AbstractIdentity
             KsuidFactory::fromString($value);
         } catch (\Exception $exception) {
             throw new InvalidIdentityException(
-                \sprintf('Provided identity value "%s" is not a valid KSUID', $value),
+                \sprintf('Provided identity value "%s" is not a valid KSUID.', $value),
                 0,
                 $exception
             );

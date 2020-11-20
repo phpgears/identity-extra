@@ -34,7 +34,7 @@ class UlidIdentityTest extends TestCase
     public function testInvalidUlid(): void
     {
         $this->expectException(InvalidIdentityException::class);
-        $this->expectExceptionMessage('Provided identity value "invalidULID" is not a valid ULID');
+        $this->expectExceptionMessage('Provided identity value "invalidULID" is not a valid ULID.');
 
         UlidIdentity::fromString('invalidULID');
     }

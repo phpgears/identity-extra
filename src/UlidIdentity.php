@@ -33,7 +33,7 @@ class UlidIdentity extends AbstractIdentity
     {
         if (\strlen($value) !== static::ULID_LENGTH) {
             throw new InvalidIdentityException(
-                \sprintf('Provided identity value "%s" is not a valid ULID', $value)
+                \sprintf('Provided identity value "%s" is not a valid ULID.', $value)
             );
         }
 
@@ -41,7 +41,7 @@ class UlidIdentity extends AbstractIdentity
             Ulid::fromString($value);
         } catch (\Exception $exception) {
             throw new InvalidIdentityException(
-                \sprintf('Provided identity value "%s" is not a valid ULID', $value),
+                \sprintf('Provided identity value "%s" is not a valid ULID.', $value),
                 0,
                 $exception
             );

@@ -34,7 +34,7 @@ class ObjectIdIdentity extends AbstractIdentity
             new ObjectId($value);
         } catch (InvalidArgumentException $exception) {
             throw new InvalidIdentityException(
-                \sprintf('Provided identity value "%s" is not a valid Mongo ObjectId', $value),
+                \sprintf('Provided identity value "%s" is not a valid Mongo ObjectId.', $value),
                 0,
                 $exception
             );

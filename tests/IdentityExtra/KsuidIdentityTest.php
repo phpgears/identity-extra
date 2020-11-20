@@ -34,7 +34,7 @@ class KsuidIdentityTest extends TestCase
     public function testInvalidKsuid(): void
     {
         $this->expectException(InvalidIdentityException::class);
-        $this->expectExceptionMessage('Provided identity value "invalidKSUID" is not a valid KSUID');
+        $this->expectExceptionMessage('Provided identity value "invalidKSUID" is not a valid KSUID.');
 
         KsuidIdentity::fromString('invalidKSUID');
     }

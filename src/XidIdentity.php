@@ -34,7 +34,7 @@ class XidIdentity extends AbstractIdentity
             Generator::fromString($value);
         } catch (XidException $exception) {
             throw new InvalidIdentityException(
-                \sprintf('Provided identity value "%s" is not a valid Xid', $value),
+                \sprintf('Provided identity value "%s" is not a valid Xid.', $value),
                 0,
                 $exception
             );

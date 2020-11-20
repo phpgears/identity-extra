@@ -34,7 +34,7 @@ class ObjectIdIdentityTest extends TestCase
     public function testInvalidMongoId(): void
     {
         $this->expectException(InvalidIdentityException::class);
-        $this->expectExceptionMessage('Provided identity value "invalidMongoObjectId" is not a valid Mongo ObjectId');
+        $this->expectExceptionMessage('Provided identity value "invalidMongoObjectId" is not a valid Mongo ObjectId.');
 
         ObjectIdIdentity::fromString('invalidMongoObjectId');
     }

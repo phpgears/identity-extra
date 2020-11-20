@@ -2,7 +2,7 @@
 [![Latest Version](https://img.shields.io/packagist/v/phpgears/identity-extra.svg?style=flat-square)](https://packagist.org/packages/phpgears/identity-extra)
 [![License](https://img.shields.io/github/license/phpgears/identity-extra.svg?style=flat-square)](https://github.com/phpgears/identity-extra/blob/master/LICENSE)
 
-[![Build Status](https://img.shields.io/travis/phpgears/identity-extra.svg?style=flat-square)](https://travis-ci.org/phpgears/identity-extra)
+[![Build Status](https://img.shields.io/travis/com/phpgears/identity-extra.svg?style=flat-square)](https://travis-ci.com/github/phpgears/identity-extra)
 [![Style Check](https://styleci.io/repos/188494857/shield)](https://styleci.io/repos/188494857)
 [![Code Quality](https://img.shields.io/scrutinizer/g/phpgears/identity-extra.svg?style=flat-square)](https://scrutinizer-ci.com/g/phpgears/identity-extra)
 [![Code Coverage](https://img.shields.io/coveralls/phpgears/identity-extra.svg?style=flat-square)](https://coveralls.io/github/phpgears/identity-extra)
