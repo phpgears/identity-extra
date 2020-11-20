@@ -27,8 +27,7 @@ class KsuidIdentityTest extends TestCase
         $ksuid = '1LgaE8DYkQTCv9V4ssXNLOacjhf';
         $stub = KsuidIdentity::fromString($ksuid);
 
-        $this->assertSame($ksuid, $stub->getValue());
-        $this->assertSame($ksuid, (string) $stub);
+        static::assertSame($ksuid, $stub->getValue());
     }
 
     public function testInvalidKsuid(): void

@@ -27,8 +27,7 @@ class ObjectIdIdentityTest extends TestCase
         $mongoId = '5ce87cd5355b6c68ca0abd70';
         $stub = ObjectIdIdentity::fromString($mongoId);
 
-        $this->assertSame($mongoId, $stub->getValue());
-        $this->assertSame($mongoId, (string) $stub);
+        static::assertSame($mongoId, $stub->getValue());
     }
 
     public function testInvalidMongoId(): void

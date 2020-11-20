@@ -27,8 +27,7 @@ class XidIdentityTest extends TestCase
         $xid = 'bjk1hgk14qm51s88m3pg';
         $stub = XidIdentity::fromString($xid);
 
-        $this->assertSame($xid, $stub->getValue());
-        $this->assertSame($xid, (string) $stub);
+        static::assertSame($xid, $stub->getValue());
     }
 
     public function testInvalidXid(): void

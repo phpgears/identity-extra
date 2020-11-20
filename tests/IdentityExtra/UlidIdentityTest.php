@@ -27,8 +27,7 @@ class UlidIdentityTest extends TestCase
         $ulid = '01DBNARX8ZQQWR3XDTJBY9K0CN';
         $stub = UlidIdentity::fromString($ulid);
 
-        $this->assertSame($ulid, $stub->getValue());
-        $this->assertSame($ulid, (string) $stub);
+        static::assertSame($ulid, $stub->getValue());
     }
 
     public function testInvalidUlid(): void
